@@ -150,5 +150,8 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/git,java,maven,windows,eclipse
 
-#wallet
+# wallet
 /wallet
+
+# 자료 제외
+*.pdf
