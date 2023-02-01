@@ -16,11 +16,13 @@ depth2 = set([])
 depth3 = set([])
 
 for i in range(42,176):
-    cateString = elements[i]["onclick"].split(',')[2][1:-3].split('_')
-    print(i, ")", cateString)
-    depth1.add(cateString[0])
-    depth2.add(cateString[1])
-    depth3.add(cateString[2])
+    # cateString = elements[i]["onclick"].split(',')[2][1:-3].split('_')
+    cateString = elements[i]["href"].split('/')[3]
+    cateName = elements[i]["onclick"].split(',')[2][1:-3].split('_')
+    print(cateString,' :: ', cateName)
+    depth1.add(cateString[0:2])
+    depth2.add(cateString[2:4])
+    depth3.add(cateString[4:])
 
 print("-- depth1")
 for d1 in depth1:
