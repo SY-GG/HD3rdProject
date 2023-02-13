@@ -19,7 +19,7 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 # browser = webdriver.Chrome(options=options)
 driver = webdriver.Chrome(executable_path="chromedriver_win32\chromedriver.exe", options=options)
 
-listUrl = "http://www.thehandsome.com/ko/c/we101/#1_0_0_0_0_829_0_0_0"
+listUrl = "http://www.thehandsome.com/ko/c/we052/#1_0_0_0_0_214_0_0_0"
 driver.get(listUrl)
 
 # FEAT: 카테고리 찾기
@@ -51,8 +51,8 @@ for page in range(1,5):
         # NOTE: p_common >> PID,PNAME,PNOTE,BNO,PSTATUS
         item_info = result.select_one('a.item_info2')
         PID =  item_info.select_one('.price > span')['id'].split('_')[1]
-        PNAME = item_info.select_one('.title').get_text()
-        BNAME = item_info.select_one('.brand').get_text().replace("'", "''").replace("&", "\&")
+        PNAME = item_info.select_one('.title').get_text().strip().replace("'", "''").replace("&", "\&")
+        BNAME = item_info.select_one('.brand').get_text().strip().replace("'", "''").replace("&", "\&")
         
         # FEAT: product_common 등록 후, category에 product 등록
         print("insert into product_common (PID, PNAME, BNO) VALUES ('{0}', '{1}', (select BNO from brand where BNAME='{2}'));".format(PID, PNAME, BNAME))
