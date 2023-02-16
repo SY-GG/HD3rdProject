@@ -61,7 +61,7 @@ for page in range(1, 20):
         itemParse = bs(driver.page_source, 'html.parser')
         # print(itemParse)
 
-        # TODO 상세이미지 추가
+        # TODO: 상세이미지 추가
         imgList = itemParse.select('#imageDiv > ul > li > img')
         
         # TODO PNOTE 추가

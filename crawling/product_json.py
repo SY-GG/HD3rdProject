@@ -19,7 +19,7 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 # browser = webdriver.Chrome(options=options)
 driver = webdriver.Chrome(executable_path="chromedriver_win32\chromedriver.exe", options=options)
 
-listUrl = "http://www.thehandsome.com/ko/c/we052/#1_0_0_0_0_214_0_0_0"
+listUrl = "http://www.thehandsome.com/ko/c/me102/#1_0_0_0_0_48_0_0_0"
 driver.get(listUrl)
 
 # FEAT: 카테고리 찾기
@@ -33,7 +33,7 @@ depth3 = cateString[4:]
 # FEAT: 전체 페이지 긁기
 # FIXME: range 바꾸기
 # for page in range(1, 2):
-for page in range(1,5):
+for page in range(1, 10):
     print("--" , driver.current_url)
     pageUrl = driver.current_url
     wait = WebDriverWait(driver, 5)

@@ -21,3 +21,7 @@ for i in range(42,176):
     # cateString = elements[i]["onclick"].split(',')[2][1:-3].split('_')
     cateString = elements[i]["href"].split('/')[3]
     print("INSERT INTO CATEGORY (CATENO, DEPTH1NAME, DEPTH2NAME, DEPTH3NAME) VALUES (category_seq.NEXTVAL, '{}', '{}', '{}');".format(cateString[0:2], cateString[2:4], cateString[4:]))
+
+print(depth1)
+print(depth2)
+print(depth3)

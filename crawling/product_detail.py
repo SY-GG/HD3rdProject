@@ -32,12 +32,12 @@ def getDetailInfo(PCID):
 
     PCPRICE = int(itemInfo['product']['variantOptions']
                   [0]['priceData']['value'])
-    PID = itemInfo['product']['baseProduct']
+    PID = itemInfo['product']['baseProduct'].strip().replace("'", "''").replace("&", "\&")
     # print(PCPRICE)
     # print(PID)
 
     # FEAT: PNOTE 수정
-    PNOTE = itemInfo['product']['newDescription01']
+    PNOTE = itemInfo['product']['newDescription01'].replace("'", "''").replace("&", "\&")
     print("update product_common set PNOTE = '{}' where pid='{}';".format(PNOTE, PID).strip())
 
     # FEAT: product_color 삽입문
